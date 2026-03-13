@@ -1,0 +1,51 @@
+/* base.css */
+:root {
+    --t-neon: #00ff88;
+    --t-neon-dim: rgba(0, 255, 136, 0.4);
+    --t-neon-faint: rgba(0, 255, 136, 0.1);
+    --t-bg: #030504;
+    --t-surface: rgba(10, 12, 11, 0.95);
+    --t-panel-bg: rgba(0, 15, 8, 0.6);
+    --t-border: #1a241f;
+    --t-border-bright: #2d3d35;
+    --t-white: #e0f2e9;
+    --t-warn: #ff3333;
+    --f-hdr: 'Syncopate', sans-serif;
+    --f-data: 'JetBrains Mono', monospace;
+    --f-ui: 'Lexend Exa', sans-serif;
+    --win-pad: 20px;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    cursor: crosshair; 
+    scrollbar-width: thin;
+    scrollbar-color: var(--t-neon-dim) transparent;
+}
+
+body {
+    background-color: var(--t-bg);
+    color: var(--t-white);
+    font-family: var(--f-ui);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-image: 
+        linear-gradient(var(--t-neon-faint) 1px, transparent 1px), 
+        linear-gradient(90deg, var(--t-neon-faint) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: bg-pulse 10s infinite alternate;
+}
+
+@keyframes bg-pulse {
+    from { background-size: 50px 50px; }
+    to { background-size: 55px 55px; opacity: 0.8; }
+}
+
+@keyframes spin { 
+    100% { transform: rotate(360deg); } 
+}

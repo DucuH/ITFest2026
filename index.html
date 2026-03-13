@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ULTRA NUTRITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=JetBrains+Mono:wght@200;400;700;800&family=Lexend+Exa:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+
+    <div class="system-header">
+        <div class="logo-wrap">
+            <div class="logo-glyph"></div>
+            <div class="logo-text">ULTRA NUTRITION</div> 
+        </div>
+    </div>
+
+    <div class="viewport-main">
+        <div class="app-shell">
+            
+            <div class="window-top-rail">
+                <div class="nav-tabs">
+                    <button class="tab active" onclick="Engine.ui.switchTab('bmi', this)">[Biometric_Profile]</button>
+                    <button class="tab" onclick="Engine.ui.switchTab('food', this)">[Nutrient_Engine]</button>
+                </div>
+                <div class="window-ops">
+                    <span>—</span> <span>▢</span> <span>✕</span>
+                </div>
+            </div>
+
+            <div id="tab-bmi" class="stage active">
+                <div class="full-grid-layout">
+                    
+                    <div class="module">
+                        <div class="module-header">INPUT_PARAMETERS</div>
+                        
+                        <div class="scroll-area">
+                            <div class="ui-field">
+                                <label class="ui-label">Biological Pattern</label>
+                                <div class="selector-row">
+                                    <div class="choice active" onclick="Engine.ui.setGender('M', this)">MALE_PATTERN</div>
+                                    <div class="choice" onclick="Engine.ui.setGender('F', this)">FEMALE_PATTERN</div>
+                                </div>
+                            </div>
+                            
+                            <div class="ui-field">
+                                <label class="ui-label">Mass Metrics (KG)</label>
+                                <div class="ui-input-wrap">
+                                    <input type="number" id="mass-in" class="ui-input" value="">
+                                </div>
+                            </div>
+
+                            <div class="ui-field">
+                                <label class="ui-label">Vertical Extent (CM)</label>
+                                <div class="ui-input-wrap">
+                                    <input type="number" id="height-in" class="ui-input" value="">
+                                </div>
+                            </div>
+
+                            <div class="ui-field">
+                                <label class="ui-label">Temporal Age</label>
+                                <div class="ui-input-wrap">
+                                    <input type="number" id="age-in" class="ui-input" value="">
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div class="module-footer">
+                            <button class="add-action-btn" style="width: 100%; padding: 15px; font-family: var(--f-hdr);" onclick="Engine.core.calculate()">INITIALIZE_SYNC</button>
+                        </div>
+                    </div>
+
+                    <div class="core-viz">
+                        <div class="main-ring">
+                            <div class="ring-inner"></div>
+                            <div class="counter-val" id="kcal-out">0000</div>
+                            <div class="counter-label">TARGET_KCAL</div>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <div class="module-header">SYSTEM_TELEMETRY <span>ACTIVE</span></div>
+                        <div class="scroll-area">
+                            
+                            <div class="telemetry-block">
+                                <div class="t-info"><span class="t-label">PROTEIN_CAPACITY</span><span class="t-val" id="p-val">0%</span></div>
+                                <div class="bar-outer"><div id="p-bar" class="bar-inner"></div></div>
+                            </div>
+
+                            <div class="telemetry-block">
+                                <div class="t-info"><span class="t-label">GLYCOGEN_DRIVE (CARBS)</span><span class="t-val" id="c-val">0%</span></div>
+                                <div class="bar-outer"><div id="c-bar" class="bar-inner"></div></div>
+                            </div>
+
+                            <div class="telemetry-block">
+                                <div class="t-info"><span class="t-label">LIPID_RESERVE (FAT)</span><span class="t-val" id="f-val">0%</span></div>
+                                <div class="bar-outer"><div id="f-bar" class="bar-inner"></div></div>
+                            </div>
+
+                            <div style="margin-top: 40px; padding: 15px; border: 1px dashed var(--t-border); font-family: var(--f-data); font-size: 10px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <span>BMI_INDEX:</span> <span id="bmi-res" style="color: var(--t-neon);">0.0</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <span>STATUS:</span> <span id="bmi-stat" style="color: var(--t-neon);">---</span>
+                                </div>
+                                <div style="color: #4a5a52; margin-top: 20px; border-top: 1px solid var(--t-border); padding-top: 10px;">
+                                    >> ANALYSIS_SUMMARY:<br>
+                                    <span id="bmi-desc">Awaiting biometric data input for full physiological diagnostic.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="tab-food" class="stage">
+                <div class="food-grid-layout">
+                    <div class="module">
+                        <div class="module-header">FOOD_DATABASE</div>
+                        <div class="search-engine-wrap">
+                            <input type="text" id="food-search" class="search-input" placeholder="SEARCH_KEYWORD..." onkeyup="Engine.food.search()">
+                        </div>
+                        <div class="scroll-area" id="food-list-container">
+                            <table class="food-db-table">
+                                <thead>
+                                    <tr>
+                                        <th>FOOD</th>
+                                        <th>KCAL (per 100g)</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="food-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="module">
+                        <div class="module-header">INTAKE_MONITOR <span>LIVE_FEED</span></div>
+                        <div class="core-viz" style="flex-grow: 1;">
+                            <div class="main-ring" style="max-width: 350px;">
+                                <div class="ring-inner"></div>
+                                <div class="counter-val" id="intake-total">0</div>
+                                <div class="counter-label">TOTAL_CONSUMED</div>
+                            </div>
+                            <div style="margin-top: 30px; display: flex; gap: 20px;">
+                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">PURGE_LOGS</button>
+                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD_CUSTOM_ENTRY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="data-footer">
+                <div class="terminal-log">
+                    <span>ALL SYSTEMS NOMINAL. Nan = Not a Number</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="engine.js"></script>
+    <script src="core.js"></script>
+    <script src="food.js"></script>
+</body>
+</html>
