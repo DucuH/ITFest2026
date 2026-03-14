@@ -41,7 +41,7 @@ const Engine = {
             { name: "Corn (Sweet)", kcal: 86, type: "Carb" },
 
             { name: "Banana", kcal: 89, type: "Carb" },
-            { name: "Apple (with skin)", kcal: 52, type: "Carb" },
+            { name: "Apple", kcal: 52, type: "Carb" },
             { name: "Blueberries", kcal: 57, type: "Carb" },
             { name: "Strawberries", kcal: 32, type: "Carb" },
             { name: "Mango", kcal: 60, type: "Carb" },
