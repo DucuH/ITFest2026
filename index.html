@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ULTRA NUTRITION</title>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=JetBrains+Mono:wght@200;400;700;800&family=Lexend+Exa:wght@100;400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
@@ -41,27 +41,27 @@
                             <div class="ui-field">
                                 <label class="ui-label">Biological Pattern</label>
                                 <div class="selector-row">
-                                    <div class="choice active" onclick="Engine.ui.setGender('M', this)">MALE PATTERN</div>
-                                    <div class="choice" onclick="Engine.ui.setGender('F', this)">FEMALE PATTERN</div>
+                                    <div class="choice active" onclick="Engine.ui.setGender('M', this)">MALE</div>
+                                    <div class="choice" onclick="Engine.ui.setGender('F', this)">FEMALE</div>
                                 </div>
                             </div>
                             
                             <div class="ui-field">
-                                <label class="ui-label">Mass Metrics (KG)</label>
+                                <label class="ui-label">Weight (KG)</label>
                                 <div class="ui-input-wrap">
                                     <input type="number" id="mass-in" class="ui-input" value="">
                                 </div>
                             </div>
 
                             <div class="ui-field">
-                                <label class="ui-label">Vertical Extent (CM)</label>
+                                <label class="ui-label">Height (CM)</label>
                                 <div class="ui-input-wrap">
                                     <input type="number" id="height-in" class="ui-input" value="">
                                 </div>
                             </div>
 
                             <div class="ui-field">
-                                <label class="ui-label">Temporal Age</label>
+                                <label class="ui-label">Age</label>
                                 <div class="ui-input-wrap">
                                     <input type="number" id="age-in" class="ui-input" value="">
                                 </div>
@@ -76,8 +76,8 @@
                     <div class="core-viz">
                         <div class="main-ring">
                             <div class="ring-inner"></div>
-                            <div class="counter-val" id="kcal-out">0000</div>
-                            <div class="counter-label">TARGET_KCAL</div>
+                            <div class="counter-val" id="kcal-out">0</div>
+                            <div class="counter-label">TARGET KCAL</div>
                         </div>
                     </div>
 
@@ -109,13 +109,11 @@
                                 </div>
                                 <div style="color: #4a5a52; margin-top: 20px; border-top: 1px solid var(--t-border); padding-top: 10px;">
                                     >> ANALYSIS SUMMARY:<br>
-                                    <span id="bmi-desc">Awaiting biometric data input for full physiological diagnostic.</span>
+                                    <span id="bmi-desc">Awaiting biometric data input for full physiological verdict.</span>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -124,7 +122,7 @@
                     <div class="module">
                         <div class="module-header">FOOD DATABASE</div>
                         <div class="search-engine-wrap">
-                            <input type="text" id="food-search" class="search-input" placeholder="SEARCH_KEYWORD..." onkeyup="Engine.food.search()">
+                            <input type="text" id="food-search" class="search-input" placeholder="SEARCH KEYWORD..." onkeyup="Engine.food.search()">
                         </div>
                         <div class="scroll-area" id="food-list-container">
                             <table class="food-db-table">
@@ -154,20 +152,20 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="data-footer">
                 <div class="terminal-log">
-                    <span>ALL SYSTEMS NOMINAL. Nan = Not a Number</span>
+                    <span>-Team Plankton</span>
                 </div>
             </div>
-
         </div>
     </div>
-    <script src="engine.js"></script>
-    <script src="core.js"></script>
-    <script src="food.js"></script>
+    
+    <script src="js/engine.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/food.js"></script>
+
 </body>
 </html>
