@@ -4,7 +4,7 @@ Engine.food = {
 
         const body = document.getElementById('food-body');
         body.innerHTML = '';
-        data.forEach(item => {
+        data.forEach((item, index) => {
             const row = `
             <tr>
                 <td>

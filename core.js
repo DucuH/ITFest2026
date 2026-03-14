@@ -1,19 +1,17 @@
 Engine.core = {
-
+    
     calculate: () => {
-
         const w = parseFloat(document.getElementById('mass-in').value);
         const h = parseFloat(document.getElementById('height-in').value);
         const a = parseFloat(document.getElementById('age-in').value);
 
         let bmr = (10 * w) + (6.25 * h) - (5 * a);
 
-        bmr = (Engine.state.gender === 'M') ? bmr + 5 : bmr - 161;
-
         const tdee = Math.round(bmr * 1.55);
 
-        document.getElementById('kcal-out').innerText = tdee;
 
+        document.getElementById('kcal-out').innerText = tdee;
+    
         const bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
 
         document.getElementById('bmi-res').innerText = bmi;
