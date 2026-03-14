@@ -27,7 +27,7 @@
                     <button class="tab" onclick="Engine.ui.switchTab('food', this)">[Nutrient_Engine]</button>
                 </div>
                 <div class="window-ops">
-                    <span>—</span> <span>▢</span> <span>✕</span>
+                    <span>—</span> <span>▢</span> <span>✕</span>   
                 </div>
             </div>
 
@@ -35,14 +35,14 @@
                 <div class="full-grid-layout">
                     
                     <div class="module">
-                        <div class="module-header">INPUT_PARAMETERS</div>
+                        <div class="module-header">INPUT PARAMETERS</div>
                         
                         <div class="scroll-area">
                             <div class="ui-field">
                                 <label class="ui-label">Biological Pattern</label>
                                 <div class="selector-row">
-                                    <div class="choice active" onclick="Engine.ui.setGender('M', this)">MALE_PATTERN</div>
-                                    <div class="choice" onclick="Engine.ui.setGender('F', this)">FEMALE_PATTERN</div>
+                                    <div class="choice active" onclick="Engine.ui.setGender('M', this)">MALE PATTERN</div>
+                                    <div class="choice" onclick="Engine.ui.setGender('F', this)">FEMALE PATTERN</div>
                                 </div>
                             </div>
                             
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="module-footer">
-                            <button class="add-action-btn" style="width: 100%; padding: 15px; font-family: var(--f-hdr);" onclick="Engine.core.calculate()">INITIALIZE_SYNC</button>
+                            <button class="add-action-btn" style="width: 100%; padding: 15px; font-family: var(--f-hdr);" onclick="Engine.core.calculate()">INITIALIZE</button>
                         </div>
                     </div>
 
@@ -82,33 +82,33 @@
                     </div>
 
                     <div class="module">
-                        <div class="module-header">SYSTEM_TELEMETRY <span>ACTIVE</span></div>
+                        <div class="module-header">SYSTEM TELEMETRY <span>ACTIVE</span></div>
                         <div class="scroll-area">
                             
                             <div class="telemetry-block">
-                                <div class="t-info"><span class="t-label">PROTEIN_CAPACITY</span><span class="t-val" id="p-val">0%</span></div>
+                                <div class="t-info"><span class="t-label">PROTEIN</span><span class="t-val" id="p-val">0%</span></div>
                                 <div class="bar-outer"><div id="p-bar" class="bar-inner"></div></div>
                             </div>
 
                             <div class="telemetry-block">
-                                <div class="t-info"><span class="t-label">GLYCOGEN_DRIVE (CARBS)</span><span class="t-val" id="c-val">0%</span></div>
+                                <div class="t-info"><span class="t-label">GLYCOGEN (CARBS)</span><span class="t-val" id="c-val">0%</span></div>
                                 <div class="bar-outer"><div id="c-bar" class="bar-inner"></div></div>
                             </div>
 
                             <div class="telemetry-block">
-                                <div class="t-info"><span class="t-label">LIPID_RESERVE (FAT)</span><span class="t-val" id="f-val">0%</span></div>
+                                <div class="t-info"><span class="t-label">LIPID (FAT)</span><span class="t-val" id="f-val">0%</span></div>
                                 <div class="bar-outer"><div id="f-bar" class="bar-inner"></div></div>
                             </div>
 
                             <div style="margin-top: 40px; padding: 15px; border: 1px dashed var(--t-border); font-family: var(--f-data); font-size: 10px;">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                                    <span>BMI_INDEX:</span> <span id="bmi-res" style="color: var(--t-neon);">0.0</span>
+                                    <span>BMI:</span> <span id="bmi-res" style="color: var(--t-neon);">0.0</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                                     <span>STATUS:</span> <span id="bmi-stat" style="color: var(--t-neon);">---</span>
                                 </div>
                                 <div style="color: #4a5a52; margin-top: 20px; border-top: 1px solid var(--t-border); padding-top: 10px;">
-                                    >> ANALYSIS_SUMMARY:<br>
+                                    >> ANALYSIS SUMMARY:<br>
                                     <span id="bmi-desc">Awaiting biometric data input for full physiological diagnostic.</span>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
             <div id="tab-food" class="stage">
                 <div class="food-grid-layout">
                     <div class="module">
-                        <div class="module-header">FOOD_DATABASE</div>
+                        <div class="module-header">FOOD DATABASE</div>
                         <div class="search-engine-wrap">
                             <input type="text" id="food-search" class="search-input" placeholder="SEARCH_KEYWORD..." onkeyup="Engine.food.search()">
                         </div>
@@ -131,7 +131,7 @@
                                 <thead>
                                     <tr>
                                         <th>FOOD</th>
-                                        <th>KCAL (per 100g)</th>
+                                        <th>KCAL<br>/100g</br></th>
                                         <th>ACTION</th>
                                     </tr>
                                 </thead>
@@ -142,16 +142,15 @@
                     </div>
 
                     <div class="module">
-                        <div class="module-header">INTAKE_MONITOR</div>
                         <div class="core-viz" style="flex-grow: 1;">
                             <div class="main-ring" style="max-width: 350px;">
                                 <div class="ring-inner"></div>
                                 <div class="counter-val" id="intake-total">0</div>
-                                <div class="counter-label">TOTAL_CONSUMED</div>
+                                <div class="counter-label">TOTAL CONSUMED</div>
                             </div>
                             <div style="margin-top: 20px; display: flex; gap: 20px;">
                                 <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESET</button>
-                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD_FOOD</button>
+                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD FOOD</button>
                             </div>
                         </div>
                     </div>

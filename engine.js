@@ -22,7 +22,6 @@ const Engine = {
             { name: "Cottage Cheese (2%)", kcal: 81, type: "Protein" },
             { name: "Lamb Chop", kcal: 294, type: "Protein" },
             { name: "Venison Steak", kcal: 158, type: "Protein" },
-
             { name: "Duck Breast (Skinless)", kcal: 135, type: "Protein" },
             { name: "Turkey Thigh", kcal: 158, type: "Protein" },
             { name: "Bison Steak", kcal: 143, type: "Protein" },
@@ -85,7 +84,6 @@ const Engine = {
             { name: "Grapes", kcal: 69, type: "Carb" },
             { name: "Watermelon", kcal: 30, type: "Carb" },
             { name: "Kiwi", kcal: 61, type: "Carb" },
-
             { name: "Sourdough Bread", kcal: 289, type: "Carb" },
             { name: "Rye Bread", kcal: 259, type: "Carb" },
             { name: "Pita Bread", kcal: 275, type: "Carb" },
@@ -141,7 +139,6 @@ const Engine = {
             { name: "Pumpkin Seeds", kcal: 559, type: "Fat" },
             { name: "Pistachios", kcal: 562, type: "Fat" },
             { name: "Flax Seeds", kcal: 534, type: "Fat" },
-
             { name: "Macadamia Nuts", kcal: 718, type: "Fat" },
             { name: "Pecans", kcal: 691, type: "Fat" },
             { name: "Brazil Nuts", kcal: 659, type: "Fat" },
@@ -191,7 +188,6 @@ const Engine = {
             { name: "Mushrooms", kcal: 22, type: "Fiber" },
             { name: "Cucumber", kcal: 15, type: "Fiber" },
             { name: "Green Beans", kcal: 31, type: "Fiber" },
-
             { name: "Brussels Sprouts", kcal: 43, type: "Fiber" },
             { name: "Cabbage (Green)", kcal: 25, type: "Fiber" },
             { name: "Cabbage (Red)", kcal: 31, type: "Fiber" },
@@ -238,7 +234,6 @@ const Engine = {
             { name: "Ice Cream (Vanilla)", kcal: 207, type: "Cheat" },
             { name: "Donut (Glazed)", kcal: 452, type: "Cheat" },
             { name: "Potato Chips", kcal: 536, type: "Cheat" },
-
             { name: "Chocolate Chip Cookie", kcal: 492, type: "Cheat" },
             { name: "Brownie", kcal: 466, type: "Cheat" },
             { name: "Cupcake (Frosted)", kcal: 377, type: "Cheat" },
