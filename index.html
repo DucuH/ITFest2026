@@ -142,16 +142,16 @@
                     </div>
 
                     <div class="module">
-                        <div class="module-header">INTAKE_MONITOR <span>LIVE_FEED</span></div>
+                        <div class="module-header">INTAKE_MONITOR</div>
                         <div class="core-viz" style="flex-grow: 1;">
                             <div class="main-ring" style="max-width: 350px;">
                                 <div class="ring-inner"></div>
                                 <div class="counter-val" id="intake-total">0</div>
                                 <div class="counter-label">TOTAL_CONSUMED</div>
                             </div>
-                            <div style="margin-top: 30px; display: flex; gap: 20px;">
-                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">PURGE_LOGS</button>
-                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD_CUSTOM_ENTRY</button>
+                            <div style="margin-top: 20px; display: flex; gap: 20px;">
+                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESET</button>
+                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD_FOOD</button>
                             </div>
                         </div>
                     </div>

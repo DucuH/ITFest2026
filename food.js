@@ -52,7 +52,6 @@ Engine.food = {
 
             log.innerHTML =`[${new Date().toLocaleTimeString()}] <span>LOGGED: ${name} (${mass}g) -> +${calculated} kcal</span>`;
         }
-
     },
 
     addCustom: () => {
@@ -77,7 +76,6 @@ Engine.food = {
             document.getElementById('intake-total').innerText = "0";
         }
     }
-
 };
 
 window.onload = () => {
@@ -85,5 +83,3 @@ window.onload = () => {
     Engine.core.calculate();
 
 };
-
-
