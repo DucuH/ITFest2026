@@ -66,6 +66,16 @@
                                     <input type="number" id="age-in" class="ui-input" value="">
                                 </div>
                             </div>  
+
+                            <div class="ui-field">
+                                <label class="ui-label">WORKOUT GOAL</label>
+                                <div class="selector-row" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                    <div class="choice active" onclick="Engine.ui.setGoal('maintain', this)" style="flex: 1 1 45%; font-size: 10px;">MAINTAIN</div>
+                                    <div class="choice" onclick="Engine.ui.setGoal('lose', this)" style="flex: 1 1 45%; font-size: 10px;">LOSE WEIGHT</div>
+                                    <div class="choice" onclick="Engine.ui.setGoal('gain', this)" style="flex: 1 1 45%; font-size: 10px;">GAIN WEIGHT</div>
+                                    <div class="choice" onclick="Engine.ui.setGoal('muscle', this)" style="flex: 1 1 45%; font-size: 10px;">BUILD MUSCLE</div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="module-footer">
@@ -109,7 +119,7 @@
                                 </div>
                                 <div style="color: #4a5a52; margin-top: 20px; border-top: 1px solid var(--t-border); padding-top: 10px;">
                                     >> ANALYSIS SUMMARY:<br>
-                                    <span id="bmi-desc">Awaiting biometric data input for full physiological verdict.</span>
+                                    <span id="bmi-desc">Awaiting biometric data input for full physiological verdict. <br>Consult a doctor first!</br></span>
                                 </div>
                             </div>
                         </div>
@@ -148,8 +158,16 @@
                                 <div class="counter-val" id="intake-total">0</div>
                                 <div class="counter-label">TOTAL CONSUMED</div>
                             </div>
+
+  
+                                
+                                <div id="remaining-box" style="position: absolute; top: 20px; right: 20px; text-align: right; border-right: 2px solid var(--t-neon); padding-right: 10px;">
+                            <div style="font-size: 10px; color: var(--t-neon-dim);">REMAINING</div>
+                            <div id="remaining-kcal" style="font-size: 22px; font-family: var(--f-data);">0</div>
+                        </div>
+
                             <div style="margin-top: 20px;">
-                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESRET ALL</button>
+                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESET ALL</button>
                             </div>
                         </div>
                     </div>

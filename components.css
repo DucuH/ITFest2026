@@ -55,7 +55,6 @@
     border-top: 1px solid var(--t-border);
 }
 
-/* --- Form UI --- */
 .ui-field { margin-bottom: 25px; }
 .ui-label {
     display: block; font-family: var(--f-data); font-size: 9px;
@@ -80,7 +79,6 @@
 }
 .choice.active { border-color: var(--t-neon); color: var(--t-neon); background: var(--t-neon-faint); }
 
-/* --- Visualizations & Rings --- */
 .core-viz {
     display: flex; flex-direction: column;
     align-items: center; justify-content: center; position: relative;
@@ -107,7 +105,6 @@
     margin-top: 15px; letter-spacing: 4px;
 }
 
-/* --- Tables & Data --- */
 .search-engine-wrap {
     padding: 20px; background: rgba(0,0,0,0.5);
     border-bottom: 1px solid var(--t-border);
@@ -135,7 +132,6 @@
 }
 .add-action-btn:hover { background: var(--t-neon); color: #000; }
 
-/* --- Telemetry & Logs --- */
 .telemetry-block { margin-bottom: 25px; }
 .t-info { display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 8px; font-family: var(--f-data); }
 .t-label { color: #6a7a72; }

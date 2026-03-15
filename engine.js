@@ -1,12 +1,13 @@
 const Engine = {
     state: {
         gender: 'M',
+        goal: 'maintain',
         totalIntake: 0,
+        targetKcal: 0,
         db: []
     },
 
     ui: {
-
         switchTab: (id, btn) => {
             document.querySelectorAll('.stage').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -16,22 +17,28 @@ const Engine = {
 
         setGender: (g, btn) => {
             Engine.state.gender = g;
-            document.querySelectorAll('.choice').forEach(c => c.classList.remove('active'));
+            btn.parentElement.querySelectorAll('.choice').forEach(c => c.classList.remove('active'));
             btn.classList.add('active');
         },
 
+        setGoal: (g, btn) => {
+            Engine.state.goal = g;
+            btn.parentElement.querySelectorAll('.choice').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            if(document.getElementById('mass-in').value) Engine.core.calculate();
+        },
+
         updateBars: (p, c, f) => {
-
-            document.getElementById('p-bar').style.width = p + '%';
-            document.getElementById('p-val').innerText = p + '%';
-
-            document.getElementById('c-bar').style.width = c + '%';
-            document.getElementById('c-val').innerText = c + '%';
-
-            document.getElementById('f-bar').style.width = f + '%';
-            document.getElementById('f-val').innerText = f + '%';
-
+            const macros = { 'p': p, 'c': c, 'f': f };
+            Object.keys(macros).forEach(key => {
+                const bar = document.getElementById(`${key}-bar`);
+                const val = document.getElementById(`${key}-val`);
+                if(bar) {
+                    bar.style.width = macros[key] + '%';
+                    bar.style.transition = "width 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+                }
+                if(val) val.innerText = macros[key] + '%';
+            });
         }
     }
-
-};      
+};
