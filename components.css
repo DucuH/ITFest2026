@@ -149,3 +149,15 @@
 
 .terminal-log { font-family: var(--f-data); font-size: 9px; color: #3d4d45; }
 .terminal-log span { color: var(--t-neon-dim); }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}

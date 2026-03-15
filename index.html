@@ -23,8 +23,8 @@
             
             <div class="window-top-rail">
                 <div class="nav-tabs">
-                    <button class="tab active" onclick="Engine.ui.switchTab('bmi', this)">[Biometric_Profile]</button>
-                    <button class="tab" onclick="Engine.ui.switchTab('food', this)">[Nutrient_Engine]</button>
+                    <button class="tab active" onclick="Engine.ui.switchTab('bmi', this)">[Biometric Profile]</button>
+                    <button class="tab" onclick="Engine.ui.switchTab('food', this)">[Nutrient Engine]</button>
                 </div>
                 <div class="window-ops">
                     <span>—</span> <span>▢</span> <span>✕</span>   
@@ -120,21 +120,23 @@
             <div id="tab-food" class="stage">
                 <div class="food-grid-layout">
                     <div class="module">
-                        <div class="module-header">FOOD DATABASE</div>
+                        <div class="module-header">
+                            <span>FOOD DATABASE</span>
+                            <button class="add-action-btn" onclick="Engine.food.addCustom()">+ ADD FOOD</button>
+                        </div>
                         <div class="search-engine-wrap">
                             <input type="text" id="food-search" class="search-input" placeholder="SEARCH KEYWORD..." onkeyup="Engine.food.search()">
                         </div>
-                        <div class="scroll-area" id="food-list-container">
+                        <div class="scroll-area food-scroll-fix" id="food-list-container">
                             <table class="food-db-table">
                                 <thead>
                                     <tr>
-                                        <th>FOOD</th>
-                                        <th>KCAL<br>/100g</br></th>
-                                        <th>ACTION</th>
+                                        <th style="width: 50%;">FOOD</th>
+                                        <th style="width: 20%; text-align: center;">KCAL/100g</th>
+                                        <th style="width: 30%; text-align: right; padding-right: 15px;">ACTION</th>
                                     </tr>
                                 </thead>
-                                <tbody id="food-body">
-                                </tbody>
+                                <tbody id="food-body"></tbody>
                             </table>
                         </div>
                     </div>
@@ -146,9 +148,8 @@
                                 <div class="counter-val" id="intake-total">0</div>
                                 <div class="counter-label">TOTAL CONSUMED</div>
                             </div>
-                            <div style="margin-top: 20px; display: flex; gap: 20px;">
-                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESET</button>
-                                <button class="add-action-btn" onclick="Engine.food.addCustom()">ADD FOOD</button>
+                            <div style="margin-top: 20px;">
+                                <button class="add-action-btn" style="border-color: var(--t-warn); color: var(--t-warn);" onclick="Engine.food.reset()">RESRET ALL</button>
                             </div>
                         </div>
                     </div>
